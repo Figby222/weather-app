@@ -4,15 +4,13 @@
     background: var(--weather-info-background-color);
     color: var(--text-color);
     font-weight: bold;
-    --text-color: yellow;
-    background: var(--weather-info-background-color);
-    color: var(--text-color);
-    font-weight: bold;
 }
 .weather-info{
     display: grid;
     align-items: center;
     justify-content: center;
 }
-    
+
+.weather-location {
+    font-size: 2rem;
 }
