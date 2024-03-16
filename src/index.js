@@ -28,13 +28,14 @@ function processData(json) {
 const location = document.querySelector("#location");
 const weatherForm = document.querySelector("form");
 
-const weatherInfo = document.querySelector("weather-info");
-const weatherLocation = document.querySelector("weather-location");
-const weatherImage = document.querySelector("weather-image");
-const weatherTemperature = document.querySelector("weather-temperature");
-const weatherWindSpeed = document.querySelector("weather-wind-speed");
+const weatherInfo = document.querySelector(".weather-info");
+const weatherLocation = document.querySelector(".weather-location");
+const weatherImage = document.querySelector(".weather-image");
+const weatherTemperature = document.querySelector(".weather-temperature");
+const weatherWindSpeed = document.querySelector(".weather-wind-speed");
 
-weatherForm.addEventListener("submit", () => {
+weatherForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     console.log(location.value);
     getWeather(location.value)
     .then(function(response) {
