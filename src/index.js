@@ -30,6 +30,7 @@ const weatherForm = document.querySelector("form");
 
 const weatherInfo = document.querySelector(".weather-info");
 const weatherLocation = document.querySelector(".weather-location");
+const weatherCondition = document.querySelector(".weather-condition");
 const weatherImage = document.querySelector(".weather-image");
 const weatherTemperature = document.querySelector(".weather-temperature");
 const weatherWindSpeed = document.querySelector(".weather-wind-speed");
@@ -42,6 +43,10 @@ weatherForm.addEventListener("submit", (e) => {
         return processData(response)
     }).then(function(response) {
         weatherLocation.textContent = response.city;
+        weatherCondition.textContent = response.conditionText;
+        weatherImage.src = response.conditionIcon;
+        weatherTemperature.textContent = `Temperature (F): ${response.tempF}`;
+        weatherWindSpeed.textContent = `Wind speed: ${response.windMph} MPH`;
     });
     console.log("test");
 
