@@ -25,10 +25,17 @@ function processData(json) {
     })
 }
 
-getWeather("park city")
-.then(function(response) {
-    return processData(response)
-}).then(function(response) {
-    console.log(response);
-});
-console.log("test");
+const location = document.querySelector("#location");
+const submitBtn = document.querySelector("button");
+
+submitBtn.addEventListener("click", () => {
+    console.log(location.value);
+    getWeather(location.value)
+    .then(function(response) {
+        return processData(response)
+    }).then(function(response) {
+        console.log(response);
+    });
+    console.log("test");
+
+})
