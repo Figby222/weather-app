@@ -10,8 +10,13 @@
     align-items: center;
     justify-content: center;
     justify-items: center;
+    grid-template-rows: 250px auto 250px auto auto
 }
 
 .weather-location {
     font-size: 2rem;
+}
+
+img {
+    width: 250px;
 }
