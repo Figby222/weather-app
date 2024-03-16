@@ -10,5 +10,9 @@
     font-weight: bold;
 }
 .weather-info{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
     
 }
