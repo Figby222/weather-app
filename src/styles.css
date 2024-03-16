@@ -9,6 +9,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
+    justify-items: center;
 }
 
 .weather-location {
