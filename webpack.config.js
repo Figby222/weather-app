@@ -1,39 +1,39 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    mode: "development",
+    entry: "./src/index.js",
     output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: "[name].js",
+        path: path.resolve(__dirname, "dist"),
     },
-    devtool: 'inline-source-map',
+    devtool: "inline-source-map",
     devServer: {
-        static: './src',
+        static: "./src",
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/template.html',
-            title: 'Template',
-            inject: 'head',
-            scriptLoading: 'defer',
+            template: "./src/template.html",
+            title: "Template",
+            inject: "head",
+            scriptLoading: "defer",
         })
     ],
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(?:js|mjs|cjs)$/,
                 exclude: /node_modules/,
                 use: {
-                  loader: 'babel-loader',
+                  loader: "babel-loader",
                   options: {
                     presets: [
-                      ['@babel/preset-env', { targets: "defaults" }]
+                      ["@babel/preset-env", { targets: "defaults" }]
                     ]
                   }
                 }
@@ -41,7 +41,7 @@ module.exports = {
         ]
     },
     optimization: {
-        runtimeChunk: 'single',
+        runtimeChunk: "single",
     },
 };
     
