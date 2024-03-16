@@ -25,7 +25,7 @@ function processData(json) {
     })
 }
 
-const location = document.querySelector("#location");
+const locationInput = document.querySelector("#location");
 const weatherForm = document.querySelector("form");
 
 const weatherInfo = document.querySelector(".weather-info");
@@ -35,8 +35,8 @@ const weatherImage = document.querySelector(".weather-image");
 const weatherTemperature = document.querySelector(".weather-temperature");
 const weatherWindSpeed = document.querySelector(".weather-wind-speed");
 
-function displayWeather() {
-    getWeather(location.value)
+function displayWeather(location) {
+    getWeather(location)
     .then(function(response) {
         return processData(response)
     }).then(function(response) {
@@ -47,10 +47,13 @@ function displayWeather() {
         weatherWindSpeed.textContent = `Wind speed: ${response.windMph} MPH`;
     });
 }
+
+displayWeather("Park City");
+
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    displayWeather();
+    displayWeather(locationInput.value);
     
 
 })
