@@ -26,4 +26,9 @@ function processData(json) {
 }
 
 getWeather("park city")
+.then(function(response) {
+    return processData(response)
+}).then(function(response) {
+    console.log(response);
+});
 console.log("test");
