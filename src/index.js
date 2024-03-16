@@ -13,8 +13,15 @@ function getWeather(location) {
 
 function processData(json) {
     return new Promise(function(resolve, reject) {
-        resolve(json);
-
+        resolve({
+            city: json.location.name,
+            conditionText: json.current.condition.text,
+            conditionIcon: json.current.condition.icon,
+            tempC: json.current.temp_c,
+            tempF: json.current.temp_f,
+            windKph: json.current.wind_kph,
+            windMph: json.current.wind_mph
+        })
     })
 }
 
