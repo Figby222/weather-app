@@ -26,15 +26,21 @@ function processData(json) {
 }
 
 const location = document.querySelector("#location");
-const submitBtn = document.querySelector("button");
+const weatherForm = document.querySelector("form");
 
-submitBtn.addEventListener("click", () => {
+const weatherInfo = document.querySelector("weather-info");
+const weatherLocation = document.querySelector("weather-location");
+const weatherImage = document.querySelector("weather-image");
+const weatherTemperature = document.querySelector("weather-temperature");
+const weatherWindSpeed = document.querySelector("weather-wind-speed");
+
+weatherForm.addEventListener("submit", () => {
     console.log(location.value);
     getWeather(location.value)
     .then(function(response) {
         return processData(response)
     }).then(function(response) {
-        console.log(response);
+        weatherLocation.textContent = response.city;
     });
     console.log("test");
 
