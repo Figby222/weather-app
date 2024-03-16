@@ -19,6 +19,7 @@
             "double"
         ],
         "prefer-arrow-callback": "off",
-        "func-names": "off"
+        "func-names": "off",
+        "no-use-before-define": "off"
     }
 }
