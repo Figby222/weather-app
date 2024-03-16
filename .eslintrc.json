@@ -17,6 +17,8 @@
         "quotes": [
             "error",
             "double"
-        ]
+        ],
+        "prefer-arrow-callback": "off",
+        "func-names": "off"
     }
 }
