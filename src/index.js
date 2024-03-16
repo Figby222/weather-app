@@ -4,14 +4,19 @@ function getWeather(location) {
         return response.json();
     })
     .then(function(response) {
-        console.log(response);
-        console.log(response.current.feelslike_f);
+        processData(response).then(result => console.log(result));
     })
     .catch(function(err) {
         console.error(err);
     })
 }
 
+function processData(json) {
+    return new Promise(function(resolve, reject) {
+        resolve(json);
+
+    })
+}
 
 getWeather("park city")
 console.log("test");
