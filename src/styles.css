@@ -1,3 +1,7 @@
+:root {
+    --weather-info-color: blue;
+}
 .weather-info{
-    background: blue;
+    background: var(--weather-info-color);
+    
 }
