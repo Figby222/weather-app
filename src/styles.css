@@ -1,7 +1,14 @@
 :root {
     --weather-info-background-color: blue;
+    --text-color: yellow;
+    background: var(--weather-info-background-color);
+    color: var(--text-color);
+    font-weight: bold;
+    --text-color: yellow;
+    background: var(--weather-info-background-color);
+    color: var(--text-color);
+    font-weight: bold;
 }
 .weather-info{
-    background: var(--weather-info-background-color);
-
+    
 }
